@@ -1,67 +1,61 @@
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core"
+import { FormsModule } from "@angular/forms"
+import { BrowserModule } from "@angular/platform-browser"
 
-import { AppComponent } from './app.component';
-import { NgxMonacoEditorConfig } from '../../../editor/src/lib/config';
-import { MonacoEditorModule } from '../../../editor/src/lib/editor.module';
+import { AppComponent } from "./app.component"
+import { NgxMonacoEditorConfig } from "../../../editor/src/lib/common/config"
+import { MonacoEditorModule } from "../../../editor/src/lib/editor.module"
 
-declare var monaco: any;
+declare var monaco: any
 
 export function onMonacoLoad() {
+  console.log((window as any).monaco)
 
-  console.log((window as any).monaco);
-
-  const uri = monaco.Uri.parse('a://b/foo.json');
+  const uri = monaco.Uri.parse("a://b/foo.json")
   monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
     validate: true,
-    schemas: [{
-      uri: 'http://myserver/foo-schema.json',
-      fileMatch: [uri.toString()],
-      schema: {
-        type: 'object',
-        properties: {
-          p1: {
-            enum: ['v1', 'v2']
-          },
-          p2: {
-            $ref: 'http://myserver/bar-schema.json'
+    schemas: [
+      {
+        uri: "http://myserver/foo-schema.json",
+        fileMatch: [uri.toString()],
+        schema: {
+          type: "object",
+          properties: {
+            p1: {
+              enum: ["v1", "v2"]
+            },
+            p2: {
+              $ref: "http://myserver/bar-schema.json"
+            }
+          }
+        }
+      },
+      {
+        uri: "http://myserver/bar-schema.json",
+        fileMatch: [uri.toString()],
+        schema: {
+          type: "object",
+          properties: {
+            q1: {
+              enum: ["x1", "x2"]
+            }
           }
         }
       }
-    }, {
-      uri: 'http://myserver/bar-schema.json',
-      fileMatch: [uri.toString()],
-      schema: {
-        type: 'object',
-        properties: {
-          q1: {
-            enum: ['x1', 'x2']
-          }
-        }
-      }
-    }]
-  });
-
+    ]
+  })
 }
 
 const monacoConfig: NgxMonacoEditorConfig = {
-  baseUrl: 'assets',
+  baseUrl: "assets",
   defaultOptions: { scrollBeyondLastLine: false },
   onMonacoLoad
-};
+}
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, MonacoEditorModule.forRoot(monacoConfig)],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
