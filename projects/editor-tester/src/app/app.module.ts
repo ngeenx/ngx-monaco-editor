@@ -4,7 +4,7 @@ import { BrowserModule } from "@angular/platform-browser"
 
 import { AppComponent } from "./app.component"
 import { NgxMonacoEditorConfig } from "../../../editor/src/lib/common/config"
-import { MonacoEditorModule } from "../../../editor/src/lib/editor.module"
+import { NgxMonacoEditorModule } from "../../../editor/src/lib/editor.module"
 
 declare var monaco: any
 
@@ -54,7 +54,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, MonacoEditorModule.forRoot(monacoConfig)],
+  imports: [BrowserModule, FormsModule, NgxMonacoEditorModule.forRoot(monacoConfig)],
   providers: [],
   bootstrap: [AppComponent]
 })

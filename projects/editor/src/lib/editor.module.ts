@@ -10,12 +10,12 @@ import { EditorComponent } from "./components/editor.component"
   declarations: [EditorComponent, DiffEditorComponent],
   exports: [EditorComponent, DiffEditorComponent]
 })
-export class MonacoEditorModule {
+export class NgxMonacoEditorModule {
   public static forRoot(
     config: NgxMonacoEditorConfig = {}
-  ): ModuleWithProviders<MonacoEditorModule> {
+  ): ModuleWithProviders<NgxMonacoEditorModule> {
     return {
-      ngModule: MonacoEditorModule,
+      ngModule: NgxMonacoEditorModule,
       providers: [{ provide: NGX_MONACO_EDITOR_CONFIG, useValue: config }]
     }
   }

@@ -74,14 +74,14 @@ For Angular 6 and below, add the glob to assets in `.angular-cli.json` schema - 
  ```
 
 ### Sample
-Include MonacoEditorModule in Main Module and Feature Modules where you want to use the editor component.(eg: app.module.ts): 
+Include NgxMonacoEditorModule in Main Module and Feature Modules where you want to use the editor component.(eg: app.module.ts): 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
+import { NgxMonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 @NgModule({
   declarations: [
@@ -90,7 +90,7 @@ import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
   imports: [
     BrowserModule,
     FormsModule,
-    MonacoEditorModule.forRoot() // use forRoot() in main app module only.
+    NgxMonacoEditorModule.forRoot() // use forRoot() in main app module only.
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -184,13 +184,13 @@ export class AppComponent {
 ```
 
 ## Configurations
-`forRoot()` method of MonacoEditorModule accepts config of type `NgxMonacoEditorConfig`.
+`forRoot()` method of NgxMonacoEditorModule accepts config of type `NgxMonacoEditorConfig`.
 ```typescript
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
+import { NgxMonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
 import { AppComponent } from './app.component';
 
 const monacoConfig: NgxMonacoEditorConfig = {
@@ -208,7 +208,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
+    NgxMonacoEditorModule.forRoot(monacoConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -224,7 +224,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
+import { NgxMonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
 import { AppComponent } from './app.component';
 
 export function onMonacoLoad() {
@@ -277,7 +277,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
+    NgxMonacoEditorModule.forRoot(monacoConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -320,7 +320,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
+import { NgxMonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
 import { AppComponent } from './app.component';
 
 const monacoConfig: NgxMonacoEditorConfig = {
@@ -335,7 +335,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
+    NgxMonacoEditorModule.forRoot(monacoConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -381,7 +381,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
+import { NgxMonacoEditorModule, NgxMonacoEditorConfig } from 'ngx-monaco-editor';
 import { AppComponent } from './app.component';
 
 const monacoConfig: NgxMonacoEditorConfig = {
@@ -397,7 +397,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    MonacoEditorModule.forRoot(monacoConfig)
+    NgxMonacoEditorModule.forRoot(monacoConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
