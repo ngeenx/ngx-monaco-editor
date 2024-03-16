@@ -1,4 +1,6 @@
-<h1>Editor</h1>
+<h1>ngx-monaco-editor demo</h1>
+
+<h2>Editor</h2>
 <button (click)="updateOptions()">Change Language</button>
 <button (click)="code = ''; codeInput = ''">Set Value To Empty String</button>
 <button (click)="code = null; codeInput = null">Set Value To Null</button>
@@ -20,7 +22,7 @@
 
 <pre>{{ code | json }}</pre>
 
-<h1>Diff Editor</h1>
+<h2>Diff Editor</h2>
 <button (click)="updateDiffModel()">Update Models</button>
 <ngx-monaco-diff-editor
   [options]="options"
