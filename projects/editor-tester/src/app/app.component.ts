@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   modifiedModel: INgxDiffEditor = {
-    code: "hello orlando!",
+    code: "hello istanbul!",
     language: "text/plain"
   }
 

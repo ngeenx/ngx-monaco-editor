@@ -139,7 +139,7 @@ export class AppComponent {
   };
 
   modifiedModel: INgxDiffEditor = {
-    code: 'hello orlando!',
+    code: 'hello istanbul!',
     language: 'text/plain'
   };
 }
