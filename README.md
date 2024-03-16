@@ -1,20 +1,6 @@
-# Monaco Editor Component for Angular 2 and above.
+# ngx-monaco-editor
 
- - Angular <= 4: v3.x.x
- - Angular 5: v5.x.x
- - Angular 6: v6.x.x
- - Angular 7: v7.x.x
- - Angular 8: v8.x.x
- - Angular 9: v9.x.x
- - Angular 10: v10.x.x 
- - Angular 12: v12.x.x
- - Angular 13: not supported ( best to use 14, otherwise contact author)
- - Angular 14: v14.x.x
- - Angular 15: v15.x.x
- - Angular 16: v16.x.x
-- Angular 17: 17.x.x
-
-Using this Module you can utilize the Monaco Editor as an Angular Component. Feel free to contribute, raise feature requests and make it better.
+Angular implementation of [Monaco Editor](https://github.com/microsoft/monaco-editor). Only supports Angular 17 and above versions.
 
 Supports all the options available in monaco-editor [Monaco Editor Options](https://microsoft.github.io/monaco-editor/docs.html)
 
