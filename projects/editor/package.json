@@ -1,5 +1,5 @@
 {
-  "name": "ngx-monaco-editor-v2",
+  "name": "@ngeen/ngx-monaco-editor",
   "version": "17.0.1",
   "private": false,
   "description": "Monaco Code Editor for Angular",
