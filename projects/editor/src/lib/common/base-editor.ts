@@ -19,21 +19,21 @@ let loadPromise: Promise<void>
   template: ""
 })
 export abstract class BaseEditor implements AfterViewInit, OnDestroy {
-  @Input("insideNg")
-  set insideNg(insideNg: boolean) {
+  @ViewChild("editorContainer", { static: true }) public _editorContainer: ElementRef
+  @Output() public onInit = new EventEmitter<any>()
+  @Input("insideNg") public set insideNg(insideNg: boolean) {
     this._insideNg = insideNg
+
     if (this._editor) {
       this._editor.dispose()
       this.initMonaco(this._options, this.insideNg)
     }
   }
 
-  get insideNg(): boolean {
+  public get insideNg(): boolean {
     return this._insideNg
   }
 
-  @ViewChild("editorContainer", { static: true }) _editorContainer: ElementRef
-  @Output() onInit = new EventEmitter<any>()
   protected _editor: any
   protected _options: any
   protected _windowResizeSubscription: Subscription
@@ -41,7 +41,9 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
 
   constructor(@Inject(NGX_MONACO_EDITOR_CONFIG) protected config: NgxMonacoEditorConfig) {}
 
-  ngAfterViewInit(): void {
+  protected abstract initMonaco(options: any, insideNg: boolean): void
+
+  public ngAfterViewInit(): void {
     if (loadedMonaco) {
       // Wait until monaco editor is available
       loadPromise.then(() => {
@@ -113,9 +115,7 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
     }
   }
 
-  protected abstract initMonaco(options: any, insideNg: boolean): void
-
-  ngOnDestroy() {
+  public ngOnDestroy(): void {
     if (this._windowResizeSubscription) {
       this._windowResizeSubscription.unsubscribe()
     }

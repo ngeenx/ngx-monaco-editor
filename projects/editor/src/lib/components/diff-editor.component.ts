@@ -28,8 +28,7 @@ export class DiffEditorComponent extends BaseEditor {
   _originalModel: DiffEditorModel
   _modifiedModel: DiffEditorModel
 
-  @Input("options")
-  set options(options: any) {
+  @Input("options") public set options(options: any) {
     this._options = Object.assign({}, this.config.defaultOptions, options)
     if (this._editor) {
       this._editor.dispose()
@@ -37,22 +36,22 @@ export class DiffEditorComponent extends BaseEditor {
     }
   }
 
-  get options(): any {
+  public get options(): any {
     return this._options
   }
 
-  @Input("originalModel")
-  set originalModel(model: DiffEditorModel) {
+  @Input("originalModel") public set originalModel(model: DiffEditorModel) {
     this._originalModel = model
+
     if (this._editor) {
       this._editor.dispose()
       this.initMonaco(this.options, this.insideNg)
     }
   }
 
-  @Input("modifiedModel")
-  set modifiedModel(model: DiffEditorModel) {
+  @Input("modifiedModel") public set modifiedModel(model: DiffEditorModel) {
     this._modifiedModel = model
+
     if (this._editor) {
       this._editor.dispose()
       this.initMonaco(this.options, this.insideNg)
@@ -104,9 +103,11 @@ export class DiffEditorComponent extends BaseEditor {
     if (this._windowResizeSubscription) {
       this._windowResizeSubscription.unsubscribe()
     }
+
     this._windowResizeSubscription = fromEvent(window, "resize").subscribe(() =>
       this._editor.layout()
     )
+
     this.onInit.emit(this._editor)
   }
 }

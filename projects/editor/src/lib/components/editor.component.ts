@@ -38,8 +38,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
   propagateChange = (_: any) => {}
   onTouched = () => {}
 
-  @Input("options")
-  set options(options: any) {
+  @Input("options") public set options(options: any) {
     this._options = Object.assign({}, this.config.defaultOptions, options)
     if (this._editor) {
       this._editor.dispose()
@@ -47,12 +46,11 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
     }
   }
 
-  get options(): any {
+  public get options(): any {
     return this._options
   }
 
-  @Input("model")
-  set model(model: NgxEditorModel) {
+  @Input("model") public set model(model: NgxEditorModel) {
     this.options.model = model
     if (this._editor) {
       this._editor.dispose()
@@ -132,9 +130,11 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
     if (this._windowResizeSubscription) {
       this._windowResizeSubscription.unsubscribe()
     }
+
     this._windowResizeSubscription = fromEvent(window, "resize").subscribe(() =>
       this._editor.layout()
     )
+
     this.onInit.emit(this._editor)
   }
 }
