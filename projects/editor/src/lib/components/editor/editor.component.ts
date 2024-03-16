@@ -2,28 +2,16 @@ import { Component, forwardRef, Inject, Input, NgZone } from "@angular/core"
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms"
 import { fromEvent } from "rxjs"
 
-import { BaseEditor } from "../common/base-editor"
-import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../common/config"
-import { NgxEditorModel } from "../common/types"
+import { BaseEditor } from "../../common/base-editor"
+import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../../common/config"
+import { NgxEditorModel } from "../../common/types"
 
 declare var monaco: any
 
 @Component({
   selector: "ngx-monaco-editor",
-  template: '<div class="editor-container" #editorContainer></div>',
-  styles: [
-    `
-      :host {
-        display: block;
-        height: 200px;
-      }
-
-      .editor-container {
-        width: 100%;
-        height: 98%;
-      }
-    `
-  ],
+  templateUrl: "./editor.component.html",
+  styleUrls: ["./editor.component.scss", "../../shared/styles/editor.scss"],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

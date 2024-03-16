@@ -2,8 +2,8 @@ import { CommonModule } from "@angular/common"
 import { ModuleWithProviders, NgModule } from "@angular/core"
 
 import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "./common/config"
-import { DiffEditorComponent } from "./components/diff-editor.component"
-import { EditorComponent } from "./components/editor.component"
+import { DiffEditorComponent } from "./components/diff-editor/diff-editor.component"
+import { EditorComponent } from "./components/editor/editor.component"
 
 @NgModule({
   imports: [CommonModule],

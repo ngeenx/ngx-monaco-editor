@@ -1,28 +1,16 @@
 import { Component, Inject, Input, NgZone } from "@angular/core"
 import { fromEvent } from "rxjs"
 
-import { BaseEditor } from "../common/base-editor"
-import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../common/config"
-import { DiffEditorModel } from "../common/types"
+import { BaseEditor } from "../../common/base-editor"
+import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../../common/config"
+import { DiffEditorModel } from "../../common/types"
 
 declare var monaco: any
 
 @Component({
   selector: "ngx-monaco-diff-editor",
-  template: '<div class="editor-container" #editorContainer></div>',
-  styles: [
-    `
-      :host {
-        display: block;
-        height: 200px;
-      }
-
-      .editor-container {
-        width: 100%;
-        height: 98%;
-      }
-    `
-  ]
+  templateUrl: "./diff-editor.component.html",
+  styleUrls: ["./diff-editor.component.scss", "../../shared/styles/editor.scss"]
 })
 export class DiffEditorComponent extends BaseEditor {
   _originalModel: DiffEditorModel
