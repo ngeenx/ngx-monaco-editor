@@ -28,6 +28,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
 
   @Input("options") public set options(options: any) {
     this._options = Object.assign({}, this.config.defaultOptions, options)
+
     if (this._editor) {
       this._editor.dispose()
       this.initMonaco(options, this.insideNg)
@@ -40,6 +41,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
 
   @Input("model") public set model(model: NgxEditorModel) {
     this.options.model = model
+
     if (this._editor) {
       this._editor.dispose()
       this.initMonaco(this.options, this.insideNg)
@@ -76,6 +78,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
 
     if (hasModel) {
       const model = monaco.editor.getModel(options.model.uri || "")
+
       if (model) {
         options.model = model
         options.model.setValue(this._value)

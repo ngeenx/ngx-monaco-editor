@@ -13,11 +13,9 @@ declare var monaco: any
   styleUrls: ["./diff-editor.component.scss", "../../shared/styles/editor.scss"]
 })
 export class DiffEditorComponent extends BaseEditor {
-  _originalModel: DiffEditorModel
-  _modifiedModel: DiffEditorModel
-
   @Input("options") public set options(options: any) {
     this._options = Object.assign({}, this.config.defaultOptions, options)
+
     if (this._editor) {
       this._editor.dispose()
       this.initMonaco(options, this.insideNg)
@@ -45,6 +43,9 @@ export class DiffEditorComponent extends BaseEditor {
       this.initMonaco(this.options, this.insideNg)
     }
   }
+
+  private _originalModel: DiffEditorModel
+  private _modifiedModel: DiffEditorModel
 
   constructor(
     private zone: NgZone,
@@ -82,6 +83,7 @@ export class DiffEditorComponent extends BaseEditor {
     }
 
     options.theme = theme
+
     this._editor.setModel({
       original: originalModel,
       modified: modifiedModel
