@@ -1,5 +1,7 @@
 <h1>ngx-monaco-editor demo</h1>
 
+<hr />
+
 <h2>Editor</h2>
 <button (click)="updateOptions()">Change Language</button>
 <button (click)="code = ''; codeInput = ''">Set Value To Empty String</button>
@@ -21,6 +23,8 @@
 <ngx-monaco-editor *ngIf="showMultiple" [options]="options" [(ngModel)]="code"></ngx-monaco-editor>
 
 <pre>{{ code | json }}</pre>
+
+<hr />
 
 <h2>Diff Editor</h2>
 <button (click)="updateDiffModel()">Update Models</button>
