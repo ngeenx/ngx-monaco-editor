@@ -1,0 +1,20 @@
+{
+  "autorun": true,
+  "autorun_delay": 500,
+  "auto_kill": true,
+  "terminals": [
+    {
+      "name": "Angular Server",
+      "focus": false,
+      "execute": true,
+      "recycle": true,
+      "commands": ["ng serve"]
+    },
+    {
+      "name": "Angular Terminal",
+      "focus": false,
+      "execute": true,
+      "recycle": true
+    }
+  ]
+}
