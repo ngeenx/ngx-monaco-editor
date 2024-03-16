@@ -12,6 +12,7 @@
   "scripts": {
     "ng": "ng",
     "start": "run-s build-editor serve",
+    "serve": "ng serve",
     "build": "ng build --project=editor-tester --base-href=editor-tester --configuration=development",
     "build:prod": "ng build --project=editor-tester --base-href=editor-tester",
     "lint": "ng lint",
