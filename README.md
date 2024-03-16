@@ -1,14 +1,8 @@
 # ngx-monaco-editor
 
-Angular implementation of [Monaco Editor](https://github.com/microsoft/monaco-editor). Only supports Angular 17 and above versions.
+Angular implementation of [Monaco Editor](https://github.com/microsoft/monaco-editor). Only supports Angular 17 and above versions. Also see [Monaco Editor Options](https://microsoft.github.io/monaco-editor/docs.html)
 
-Supports all the options available in monaco-editor [Monaco Editor Options](https://microsoft.github.io/monaco-editor/docs.html)
-
-## Demo
-
-https://ngx-monaco-editor-v2.surge.sh/
-
-![img.png](img.png)
+## [Edit on StackBlitz ⚡️](https://stackblitz.com/~/github.com/ngeenx/ngx-monaco-editor)
 
 ## Setup
 
