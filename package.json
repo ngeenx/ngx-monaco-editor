@@ -5,10 +5,8 @@
   "keywords": [
     "angular",
     "monaco",
-    "monaco-editor-v2",
-    "code",
-    "editor",
-    "reusable"
+    "monaco-editor",
+    "monaco-code-editor"
   ],
   "license": "MIT",
   "scripts": {
@@ -33,11 +31,12 @@
   "bugs": {
     "url": "https://github.com/miki995/ngx-monaco-editor-v2/issues"
   },
-  "author": "Miroslav Maksimovic",
+  "author": "Eyüp Erdoğan",
   "contributors": [
     "Atul Kumar <atulaggarwal4288@gmail.com>",
     "Miroslav Maksimovic <miroslavmaksimovic95@gmail.com>",
-    "Thomas-Louis Simard <thomas.louis.simard@gmail.com>"
+    "Thomas-Louis Simard <thomas.louis.simard@gmail.com>",
+    "Eyüp Erdoğan <epsilonelittr@gmail.com>"
   ],
   "dependencies": {
     "@angular/animations": "^17.3.0",

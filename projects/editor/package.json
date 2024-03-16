@@ -1,30 +1,13 @@
 {
   "name": "@ngeen/ngx-monaco-editor",
-  "version": "17.0.1",
+  "version": "17.0.0",
   "private": false,
   "description": "Monaco Code Editor for Angular",
   "keywords": [
     "angular",
-    "angular 2+",
-    "angular 2",
-    "angular 4",
-    "angular 5",
-    "angular 6",
-    "angular 7",
-    "angular 8",
-    "angular 9",
-    "angular 10",
-    "angular 12",
-    "angular 14",
-    "angular 15",
-    "angular 16",
-    "angular 17",
     "monaco",
     "monaco-editor",
-    "code",
-    "editor",
-    "reusable",
-    "component"
+    "monaco-code-editor"
   ],
   "repository": {
     "type": "git",
@@ -34,11 +17,12 @@
     "url": "https://github.com/miki995/ngx-monaco-editor-v2/issues"
   },
   "license": "MIT",
-  "author": "Miroslav Maksimovic",
+  "author": "Eyüp Erdoğan",
   "contributors": [
     "Atul Kumar <atulaggarwal4288@gmail.com>",
     "Miroslav Maksimovic <miroslavmaksimovic95@gmail.com>",
-    "Thomas-Louis Simard <thomas.louis.simard@gmail.com>"
+    "Thomas-Louis Simard <thomas.louis.simard@gmail.com>",
+    "Eyüp Erdoğan <epsilonelittr@gmail.com>"
   ],
   "peerDependencies": {
     "@angular/common": "^17.3.0",
