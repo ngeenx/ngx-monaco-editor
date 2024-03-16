@@ -12,6 +12,7 @@ export function onMonacoLoad() {
   console.log((window as any).monaco)
 
   const uri = monaco.Uri.parse("a://b/foo.json")
+
   monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
     validate: true,
     schemas: [
