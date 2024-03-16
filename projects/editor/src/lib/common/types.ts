@@ -1,9 +1,9 @@
-export interface DiffEditorModel {
+export interface INgxDiffEditor {
   code: string
   language: string
 }
 
-export interface NgxEditorModel {
+export interface INgxEditor {
   value: string
   language?: string
   uri?: any

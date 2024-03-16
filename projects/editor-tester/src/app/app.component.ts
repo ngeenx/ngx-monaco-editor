@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core"
-import { DiffEditorModel, NgxEditorModel } from "../../../editor/src/lib/common/types"
+import { INgxDiffEditor, INgxEditor } from "../../../editor/src/lib/common/types"
 
 declare var monaco: any
 
@@ -62,19 +62,19 @@ export class AppComponent implements OnInit {
 	 alert('Hello world!');
 }`
 
-  originalModel: DiffEditorModel = {
+  originalModel: INgxDiffEditor = {
     code: "heLLo world!",
     language: "text/plain"
   }
 
-  modifiedModel: DiffEditorModel = {
+  modifiedModel: INgxDiffEditor = {
     code: "hello orlando!",
     language: "text/plain"
   }
 
   jsonCode = ["{", '    "p1": "v3",', '    "p2": false', "}"].join("\n")
 
-  model: NgxEditorModel = {
+  model: INgxEditor = {
     value: this.jsonCode,
     language: "json"
   }

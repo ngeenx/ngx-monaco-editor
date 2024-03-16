@@ -4,7 +4,7 @@ import { fromEvent } from "rxjs"
 
 import { BaseEditor } from "../../common/base-editor"
 import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../../common/config"
-import { NgxEditorModel } from "../../common/types"
+import { INgxEditor } from "../../common/types"
 
 declare var monaco: any
 
@@ -39,7 +39,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
     return this._options
   }
 
-  @Input("model") public set model(model: NgxEditorModel) {
+  @Input("model") public set model(model: INgxEditor) {
     this.options.model = model
 
     if (this._editor) {

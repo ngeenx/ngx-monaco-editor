@@ -123,7 +123,7 @@ Include diff-editor in html with options.(eg: app.component.html)
 ```
 ```typescript
 import { Component } from '@angular/core';
-import { DiffEditorModel } from 'ngx-monaco-editor';
+import { INgxDiffEditor } from 'ngx-monaco-editor';
 
 @Component({
   selector: 'app-root',
@@ -133,12 +133,12 @@ export class AppComponent {
   options = {
     theme: 'vs-dark'
   };
-  originalModel: DiffEditorModel = {
+  originalModel: INgxDiffEditor = {
     code: 'heLLo world!',
     language: 'text/plain'
   };
 
-  modifiedModel: DiffEditorModel = {
+  modifiedModel: INgxDiffEditor = {
     code: 'hello orlando!',
     language: 'text/plain'
   };
@@ -286,7 +286,7 @@ export class AppModule {
 }
 ```
 
-Now pass model config of type `NgxEditorModel` to Editor Component
+Now pass model config of type `INgxEditor` to Editor Component
 ```typescript
 @Component({
   selector: 'app-root',
@@ -305,7 +305,7 @@ export class AppComponent {
     '}'
   ].join('\n');
 
-  model: NgxEditorModel = {
+  model: INgxEditor = {
     value: this.jsonCode,
     language: 'json',
     uri: monaco.Uri.parse('a://b/foo.json')

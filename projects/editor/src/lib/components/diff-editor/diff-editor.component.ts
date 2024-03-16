@@ -3,7 +3,7 @@ import { fromEvent } from "rxjs"
 
 import { BaseEditor } from "../../common/base-editor"
 import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../../common/config"
-import { DiffEditorModel } from "../../common/types"
+import { INgxDiffEditor } from "../../common/types"
 
 declare var monaco: any
 
@@ -26,7 +26,7 @@ export class DiffEditorComponent extends BaseEditor {
     return this._options
   }
 
-  @Input("originalModel") public set originalModel(model: DiffEditorModel) {
+  @Input("originalModel") public set originalModel(model: INgxDiffEditor) {
     this._originalModel = model
 
     if (this._editor) {
@@ -35,7 +35,7 @@ export class DiffEditorComponent extends BaseEditor {
     }
   }
 
-  @Input("modifiedModel") public set modifiedModel(model: DiffEditorModel) {
+  @Input("modifiedModel") public set modifiedModel(model: INgxDiffEditor) {
     this._modifiedModel = model
 
     if (this._editor) {
@@ -44,8 +44,8 @@ export class DiffEditorComponent extends BaseEditor {
     }
   }
 
-  private _originalModel: DiffEditorModel
-  private _modifiedModel: DiffEditorModel
+  private _originalModel: INgxDiffEditor
+  private _modifiedModel: INgxDiffEditor
 
   constructor(
     private zone: NgZone,
