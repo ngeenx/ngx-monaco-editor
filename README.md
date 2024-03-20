@@ -125,7 +125,7 @@ By default, the editor component has fixed height of 200px. You can set the heig
 
 ```html
 <div style="height: 500px">
-  <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)] ="code"></ngx-monaco-editor>
+  <ngx-monaco-editor style="height: 100%" [options]="options" [(ngModel)] ="code"></ngx-monaco-editor>
 </div>
 ```
 
