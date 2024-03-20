@@ -4,9 +4,7 @@ Angular implementation of [Monaco Editor](https://microsoft.github.io/monaco-edi
 
 ## [Edit on StackBlitz ⚡️](https://stackblitz.com/~/github.com/ngeenx/ngx-monaco-editor)
 
-## Setup
-
-### Installation
+## 📦 Installation
 
 #### Peer Dependencies
 
@@ -20,153 +18,137 @@ NPM
 npm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
 ```
 
-Breaking change from v10, is to use monaco-editor next to ngx-monaco-editor-v2 in your package.json file.
- 
-For angular version 6 use v6.x.x
-```
-npm install ngx-monaco-editor-v2@6.0.0 --save
- ```
+#### Asessts
 
 Add the glob to assets in `angular.json`
-```typescript
+
+```json
 {
-  "apps": [
-    {
-      "assets": [
-      { "glob": "**/*", "input": "node_modules/monaco-editor", "output": "/assets/monaco/" }
-      ],
+  ...
+  "projects": {
+    "project-name": {
       ...
-    }
-    ...
-  ],
-  ...
-}
- ```
-
-
-For Angular 6 and below, add the glob to assets in `.angular-cli.json` schema - `projects.[project-name].architect.build` (to make monaco-editor lib available to the app):
-```typescript
-{
-  "options":{
-        {"assets": [
-          { "glob": "**/*", "input": "node_modules/ngx-monaco-editor/assets/monaco", "output": "./assets/monaco/" }
-
-        ],
-        ...
+      "architect": {
+        "build": {
+          ...
+          "options": {
+            ...
+            "assets": [
+              ...
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min",
+                "output": "./assets/monaco-editor/min"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/monaco-editor/min-maps",
+                "output": "./assets/monaco-editor/min-maps"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ngeenx/monaco-textmate-loader/dist/grammars",
+                "output": "./assets/monaco-textmate-loader/grammars"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ngeenx/monaco-textmate-loader/dist/configurations",
+                "output": "./assets/monaco-textmate-loader/configurations"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/vscode-oniguruma/release",
+                "output": "./assets/vscode-oniguruma/release"
+              }
+            ],
+            ...
+          }
         }
-    ...
-    },
-  ...
+      }
+    }
+  
 }
  ```
 
-### Sample
-Include NgxMonacoEditorModule in Main Module and Feature Modules where you want to use the editor component.(eg: app.module.ts): 
-```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+#### Import Module
 
-import { AppComponent } from './app.component';
-import { NgxMonacoEditorModule } from 'ngx-monaco-editor-v2';
+Import `NgxMonacoEditorModule` in your `app.module.ts`
+
+```typescript
+import { NgxMonacoEditorModule } from '@ngeen/ngx-monaco-editor';
+...
+
+// define ngx monaco editor configs
+const monacoConfig: NgxMonacoEditorConfig = {
+  baseUrl: "/assets",
+  defaultOptions: {
+    scrollBeyondLastLine: false,
+    baseUrl: "/assets"
+  }
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ...
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgxMonacoEditorModule.forRoot() // use forRoot() in main app module only.
+    NgxMonacoEditorModule.forRoot(monacoConfig), // <-- import the module
+    
+    ...
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
 ```
 
-Create Editor options in component.(eg: app.component.ts)
-```typescript
-import { Component } from '@angular/core';
+## 🧩 Available Components
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent {
-  editorOptions = {theme: 'vs-dark', language: 'javascript'};
-  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
-}
-```
-Include editor in html with options and ngModel bindings.(eg: app.component.html)
+### [👉 EditorComponent](./projects/editor/src/lib/components/editor/editor.component.ts)
+
 ```html
-<ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+<ngx-monaco-editor [options]="options" [(ngModel)]="code"></ngx-monaco-editor>
 ```
 
-Include diff-editor in html with options.(eg: app.component.html)
+### [👉 DiffEditorComponent](./projects/editor/src/lib/components/diff-editor/diff-editor.component.ts)
+
 ```html
-<ngx-monaco-diff-editor [options]="options" [originalModel]="originalModel" [modifiedModel]="modifiedModel"></ngx-monaco-diff-editor>
-```
-```typescript
-import { Component } from '@angular/core';
-import { INgxDiffEditor } from 'ngx-monaco-editor';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html'
-})
-export class AppComponent {
-  options = {
-    theme: 'vs-dark'
-  };
-  originalModel: INgxDiffEditor = {
-    code: 'heLLo world!',
-    language: 'text/plain'
-  };
-
-  modifiedModel: INgxDiffEditor = {
-    code: 'hello istanbul!',
-    language: 'text/plain'
-  };
-}
+<ngx-monaco-diff-editor [options]="options" [(ngModel)]="code"><ngx-monaco-diff-editor>
 ```
 
-### Styling
-To match height of container element add height: 100% and wrap in container
+## 🎨 Styling
+
+By default, the editor component has fixed height of 200px. You can set the height of the editor by setting the height of the parent container.
+
 ```html
 <div style="height: 500px">
-    <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+  <ngx-monaco-editor style="height: 100%" [options]="editorOptions" [(ngModel)] ="code"></ngx-monaco-editor>
 </div>
 ```
-Add class to editor tag. (eg. class="my-code-editor")
-```html
-<ngx-monaco-editor class="my-code-editor" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
-```
-Add styling in css/scss file:
-```scss
-.my-code-editor {
-  .editor-container {
-    height: calc(100vh - 100px);
-  }
-}
-```
+
 Set automaticLayout option to adjust editor size dynamically. Recommended when using in modal dialog or tabs where editor is not visible initially.
 
-### Events
-Output event (onInit) expose editor instance that can be used for performing custom operations on the editor. 
+## 📌 Events
+
+Output event (onInit) expose editor instance that can be used for performing custom operations on the editor.
+
 ```html
-<ngx-monaco-editor [options]="editorOptions" [(ngModel)]="code" (onInit)="onInit($event)"></ngx-monaco-editor>
+<ngx-monaco-editor [options]="options" [(ngModel)]="code" (onInit)="onInit($event)"></ngx-monaco-editor>
 ```
 
 ```typescript
 export class AppComponent {
-  editorOptions = {theme: 'vs-dark', language: 'javascript'};
-  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
-  onInit(editor) {
-      let line = editor.getPosition();
-      console.log(line);
-    }
+  public options = { theme: 'vs-dark', language: 'javascript' };
+  publiğc code = 'function x() { console.log("Hello world!"); }';
+
+  public onInit(editor: any): void {
+    let line = editor.getPosition();
+    
+    console.log(line);
+  }
 }
 ```
 
@@ -396,7 +378,3 @@ export class AppModule {
 ## Links
 [Monaco Editor](https://github.com/Microsoft/monaco-editor/)<br/>
 [Monaco Editor Options](https://microsoft.github.io/monaco-editor/docs.html)
-
-## License
-
-MIT © [Miroslav Maksimovic](https://github.com/miki995)
