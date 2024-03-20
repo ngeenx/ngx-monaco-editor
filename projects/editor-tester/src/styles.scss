@@ -6,3 +6,25 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+button {
+  border: 1px solid #2a5ea5;
+  background-color: #21497f;
+  color: white;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #2a5ea5;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  padding: 5px 25px 25px 25px;
+  margin: 10px;
+}
