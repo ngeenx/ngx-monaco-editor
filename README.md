@@ -111,7 +111,7 @@ Add the glob to assets in `angular.json`
 Import `NgxMonacoEditorModule` in your `app.module.ts`
 
 ```typescript
-import { NgxMonacoEditorModule } from '@ngeen/ngx-monaco-editor';
+import { NgxMonacoEditorModule, NgxMonacoEditorConfig } from "@ngeenx/ngx-monaco-editor"
 ...
 
 // define ngx monaco editor configs
