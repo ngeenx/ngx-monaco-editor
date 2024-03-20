@@ -75,6 +75,9 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^7.2.0
         version: 7.2.0(eslint@8.57.0)(typescript@5.4.2)
+      angular-split:
+        specifier: ^17.2.0
+        version: 17.2.0(@angular/common@17.3.0)(@angular/core@17.3.0)(rxjs@7.8.1)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -373,7 +376,6 @@ packages:
       '@angular/core': 17.3.0(rxjs@7.8.1)(zone.js@0.14.4)
       rxjs: 7.8.1
       tslib: 2.6.2
-    dev: false
 
   /@angular/compiler-cli@17.3.0(@angular/compiler@17.3.0)(typescript@5.4.2):
     resolution: {integrity: sha512-ewo+pb0QUC69Ey15z4vPteoBeO81HitqplysOoeXbyVBjMnKmZl3343wx7ukgcI97lmj4d38d1r4AnIoO5n/Vw==}
@@ -3393,6 +3395,19 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+    dev: true
+
+  /angular-split@17.2.0(@angular/common@17.3.0)(@angular/core@17.3.0)(rxjs@7.8.1):
+    resolution: {integrity: sha512-Curv39t7f7ueFF6GvglTv6js7tjTyzW/S8HjU5FgYaodQUFXRE21+kU0sybydU8fnAdQrRbtD7ScIUha3CneLA==}
+    peerDependencies:
+      '@angular/common': '>=16.0.0'
+      '@angular/core': '>=16.0.0'
+      rxjs: '>=7.0.0'
+    dependencies:
+      '@angular/common': 17.3.0(@angular/core@17.3.0)(rxjs@7.8.1)
+      '@angular/core': 17.3.0(rxjs@7.8.1)(zone.js@0.14.4)
+      rxjs: 7.8.1
+      tslib: 2.6.2
     dev: true
 
   /ansi-colors@4.1.3:

@@ -1,0 +1,23 @@
+.editor-container {
+  min-height: 500px;
+  height: 500px;
+
+  .ngx-monaco-editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-height: 300;
+    height: 100%;
+  }
+
+  .iframe-splitter-container {
+    height: 1000px;
+    overflow: hidden;
+    border: 1px solid darkgray;
+  }
+
+  ngx-monaco-editor {
+    height: 100%;
+    width: 100%;
+  }
+}

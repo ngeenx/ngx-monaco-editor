@@ -1,0 +1,29 @@
+<section>
+  <h3>Angular Splitter Exmaple</h3>
+
+  <div>
+    <button (click)="toggleSplitterDirection()">
+      {{ splitterDirection === "horizontal" ? "Change to Vertical" : "Change to Horizontal" }}
+    </button>
+  </div>
+
+  <div class="editor-container">
+    <as-split [direction]="splitterDirection" (dragEnd)="onSplitterDragEnd()" gutterSize="10">
+      <!-- Code Area -->
+      <as-split-area [size]="50" [minSize]="20">
+        <div class="ngx-monaco-editor-container">
+          <ngx-monaco-editor
+            [options]="options"
+            [(ngModel)]="code"
+            (onInit)="onEditorInit($event)"
+          ></ngx-monaco-editor>
+        </div>
+      </as-split-area>
+
+      <!-- Preview Area -->
+      <as-split-area [size]="50" [minSize]="30">
+        <div [innerHTML]="code"></div>
+      </as-split-area>
+    </as-split>
+  </div>
+</section>
