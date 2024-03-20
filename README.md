@@ -13,6 +13,8 @@ Angular implementation of [Monaco Editor](https://microsoft.github.io/monaco-edi
 
 #### Peer Dependencies
 
+All of the following peer dependencies must be installed in your project. If you are using PNPM to install the package, you need to add `pnpm-workspace.yaml` file to the root of your project and add the following lines to it (*see [example file](./pnpm-workspace.yaml)*). Because these packages coming with custom assets, you need to add them to the assets in `angular.json` file.
+
 PNPM
 ```
 pnpm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
@@ -21,6 +23,20 @@ pnpm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
 NPM
 ```
 npm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
+```
+
+#### Install Package
+
+This package is contains the Angular components for the Monaco Editor. You can install it via NPM or PNPM.
+
+PNPM
+```
+pnpm i @ngeenx/ngx-monaco-editor
+```
+
+NPM
+```
+npm i @ngeenx/ngx-monaco-editor
 ```
 
 #### Asessts
