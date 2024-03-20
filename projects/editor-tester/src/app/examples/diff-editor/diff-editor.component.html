@@ -1,0 +1,10 @@
+<section>
+  <h3>Diff Editor Exmaple</h3>
+
+  <ngx-monaco-diff-editor
+    [options]="options"
+    [originalModel]="originalCode"
+    [modifiedModel]="modifiedCode"
+    (onInit)="onEditorInit($event)"
+  ></ngx-monaco-diff-editor>
+</section>
