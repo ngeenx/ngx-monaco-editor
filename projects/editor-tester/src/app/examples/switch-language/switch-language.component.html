@@ -1,0 +1,15 @@
+<section>
+  <h3>Switch Language Exmaple</h3>
+
+  <div>
+    <button (click)="changeLanguage()">
+      {{ options.language === "php" ? "Change to JS" : "Change to PHP" }}
+    </button>
+  </div>
+
+  <ngx-monaco-editor
+    [options]="options"
+    [(ngModel)]="code"
+    (onInit)="onEditorInit($event)"
+  ></ngx-monaco-editor>
+</section>
