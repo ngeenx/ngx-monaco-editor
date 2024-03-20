@@ -1,6 +1,7 @@
 {
   "name": "ngx-monaco-editor-app",
   "version": "17.0.0",
+  "type": "module",
   "description": "Monaco Code Editor For Angular",
   "keywords": [
     "angular",
@@ -11,16 +12,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "run-s build-editor serve",
-    "serve": "ng serve",
-    "build": "ng build --project=editor-tester --base-href=editor-tester --configuration=development",
-    "build:prod": "ng build --project=editor-tester --base-href=editor-tester",
-    "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-and-deploy-demo": "npm run build:prod && cp dist/editor-tester/index.html dist/editor-tester/200.html && cd dist/editor-tester && surge --domain ngx-monaco-editor-v2.surge.sh",
-    "build-editor": "npm run copy:readme && ng build editor",
-    "npm-publish": "npm run build-editor && bash npm-publish",
-    "copy:readme": "cp -rf README.md projects/editor/",
+    "build": "node tools/cleanup.js && ng build editor && node tools/copyAssets",
+    "package": "npm run build && npm pack ./dist/editor && npm publish ./dist/editor --access public",
     "prettier": "prettier --write \"./projects/**/*.{js,ts}\""
   },
   "private": false,
@@ -37,6 +31,9 @@
     "Miroslav Maksimovic <miroslavmaksimovic95@gmail.com>",
     "Thomas-Louis Simard <thomas.louis.simard@gmail.com>",
     "Eyüp Erdoğan <epsilonelittr@gmail.com>"
+  ],
+  "files": [
+    "dist/editor"
   ],
   "dependencies": {
     "@angular/animations": "^17.3.0",
@@ -70,6 +67,7 @@
     "eslint-plugin-jsdoc": "^48.2.1",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-promise": "^6.1.1",
+    "fs-extra": "^11.2.0",
     "jasmine-core": "^5.1.2",
     "karma": "~6.4.3",
     "karma-chrome-launcher": "^3.2.0",
