@@ -32,7 +32,7 @@ All of the following peer dependencies must be installed in your project. If you
 
 PNPM
 ```
-pnpm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
+pnpm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader --workspace-root
 ```
 
 NPM
