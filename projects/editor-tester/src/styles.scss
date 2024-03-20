@@ -39,3 +39,13 @@ button {
     background-color: #2a5ea5;
   }
 }
+
+.ngx-monaco-editor-container {
+  height: 300px;
+}
+
+ngx-monaco-editor,
+ngx-monaco-diff-editor {
+  height: 100% !important;
+  width: 100% !important;
+}

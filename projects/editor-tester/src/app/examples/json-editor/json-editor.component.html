@@ -1,9 +1,11 @@
 <section>
   <h3>JSON Editor Exmaple</h3>
 
-  <ngx-monaco-editor
-    [options]="options"
-    [(ngModel)]="code"
-    (onInit)="onEditorInit($event)"
-  ></ngx-monaco-editor>
+  <div class="ngx-monaco-editor-container">
+    <ngx-monaco-editor
+      [options]="options"
+      [(ngModel)]="code"
+      (onInit)="onEditorInit($event)"
+    ></ngx-monaco-editor>
+  </div>
 </section>
