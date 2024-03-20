@@ -1,7 +1,7 @@
+import { MonacoTextmateLoader } from "@ngeenx/monaco-textmate-loader"
 import { Component, forwardRef, Inject, Input, NgZone } from "@angular/core"
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms"
 import { fromEvent } from "rxjs"
-
 import { BaseEditor } from "../../common/base-editor"
 import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../../common/config"
 import { INgxEditor } from "../../common/types"
@@ -31,6 +31,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
 
     if (this._editor) {
       this._editor.dispose()
+
       this.initMonaco(options, this.insideNg)
     }
   }
@@ -44,6 +45,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
 
     if (this._editor) {
       this._editor.dispose()
+
       this.initMonaco(this.options, this.insideNg)
     }
   }
@@ -55,7 +57,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
     super(editorConfig)
   }
 
-  writeValue(value: any): void {
+  public writeValue(value: any): void {
     this._value = value || ""
     // Fix for value change while dispose in process.
     setTimeout(() => {
@@ -73,7 +75,7 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
     this.onTouched = fn
   }
 
-  protected initMonaco(options: any, insideNg: boolean): void {
+  protected async initMonaco(options: any, insideNg: boolean): Promise<void> {
     const hasModel = !!options.model
 
     if (hasModel) {
@@ -92,12 +94,17 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
     }
 
     if (insideNg) {
-      this._editor = monaco.editor.create(this._editorContainer.nativeElement, options)
+      this._editor = await MonacoTextmateLoader.create(this._editorContainer.nativeElement, options)
     } else {
-      this.zone.runOutsideAngular(() => {
-        this._editor = monaco.editor.create(this._editorContainer.nativeElement, options)
+      await this.zone.runOutsideAngular(async () => {
+        this._editor = await MonacoTextmateLoader.create(
+          this._editorContainer.nativeElement,
+          options
+        )
       })
     }
+
+    console.log("editor", this._editor)
 
     if (!hasModel) {
       this._editor.setValue(this._value)

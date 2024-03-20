@@ -33,8 +33,8 @@ importers:
         specifier: ^17.3.0
         version: 17.3.0(@angular/common@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)(rxjs@7.8.1)
       '@ngeenx/monaco-textmate-loader':
-        specifier: ^1.0.12
-        version: 1.0.12
+        specifier: ^1.0.13
+        version: 1.0.13
       monaco-editor:
         specifier: ^0.47.0
         version: 0.47.0
@@ -2488,8 +2488,8 @@ packages:
       call-bind: 1.0.7
     dev: true
 
-  /@ngeenx/monaco-textmate-loader@1.0.12:
-    resolution: {integrity: sha512-oF9HuvPkiMtFEmShQgIJ7lxAw1ak/qBkCufeJ+zmYQVoXqj2F6NLWjVFSNbJ9C+oEmtvPywGyJjDletSuPeOUw==}
+  /@ngeenx/monaco-textmate-loader@1.0.13:
+    resolution: {integrity: sha512-cYjVmPjQ5xKGPZmHy+V7E2pZm7fMyd0Y/AI1aoRlqIaz3u+WQT/PZB4YYiZ+4j3rgIllRb/x2SmP5Zh5TktIEw==}
     dependencies:
       monaco-editor: 0.47.0
       vscode-oniguruma: 2.0.1

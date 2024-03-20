@@ -47,7 +47,7 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "@ngeenx/monaco-textmate-loader": "^1.0.12",
+    "@ngeenx/monaco-textmate-loader": "^1.0.13",
     "monaco-editor": "^0.47.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.2",

@@ -1,6 +1,6 @@
+import { MonacoTextmateLoader } from "@ngeenx/monaco-textmate-loader"
 import { Component, Inject, Input, NgZone } from "@angular/core"
 import { fromEvent } from "rxjs"
-
 import { BaseEditor } from "../../common/base-editor"
 import { NGX_MONACO_EDITOR_CONFIG, NgxMonacoEditorConfig } from "../../common/config"
 import { INgxDiffEditor } from "../../common/types"
@@ -54,7 +54,7 @@ export class DiffEditorComponent extends BaseEditor {
     super(editorConfig)
   }
 
-  protected initMonaco(options: any, insideNg: boolean): void {
+  protected async initMonaco(options: any, insideNg: boolean): Promise<void> {
     if (!this._originalModel || !this._modifiedModel) {
       throw new Error("originalModel or modifiedModel not found for ngx-monaco-diff-editor")
     }
@@ -75,10 +75,16 @@ export class DiffEditorComponent extends BaseEditor {
     const theme = options.theme
 
     if (insideNg) {
-      this._editor = monaco.editor.createDiffEditor(this._editorContainer.nativeElement, options)
+      this._editor = await MonacoTextmateLoader.create(this._editorContainer.nativeElement, {
+        ...options,
+        diffEditor: true
+      })
     } else {
-      this.zone.runOutsideAngular(() => {
-        this._editor = monaco.editor.createDiffEditor(this._editorContainer.nativeElement, options)
+      await this.zone.runOutsideAngular(async () => {
+        this._editor = await MonacoTextmateLoader.create(this._editorContainer.nativeElement, {
+          ...options,
+          diffEditor: true
+        })
       })
     }
 

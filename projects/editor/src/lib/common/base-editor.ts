@@ -26,6 +26,7 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
 
     if (this._editor) {
       this._editor.dispose()
+
       this.initMonaco(this._options, this.insideNg)
     }
   }
@@ -39,7 +40,7 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
   protected _windowResizeSubscription!: Subscription
   private _insideNg: boolean = false
 
-  constructor(@Inject(NGX_MONACO_EDITOR_CONFIG) protected config: NgxMonacoEditorConfig) {}
+  constructor(@Inject(NGX_MONACO_EDITOR_CONFIG) protected config: NgxMonacoEditorConfig) { }
 
   protected abstract initMonaco(options: any, insideNg: boolean): void
 
@@ -51,25 +52,32 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
       })
     } else {
       loadedMonaco = true
+
       loadPromise = new Promise<void>((resolve: any) => {
-        const baseUrl = this.config.baseUrl || "./assets"
+        const baseUrl = this.config.baseUrl || "/assets"
+
         if (typeof (<any>window).monaco === "object") {
           this.initMonaco(this._options, this.insideNg)
           resolve()
           return
         }
+
         const onGotAmdLoader: any = (require?: any) => {
           let usedRequire = require || (<any>window).require
-          let requireConfig = { paths: { vs: `${baseUrl}/monaco/min/vs` } }
+          let requireConfig = { paths: { vs: `${baseUrl}/monaco-editor/min/vs` } }
+
           Object.assign(requireConfig, this.config.requireConfig || {})
 
           // Load monaco
           usedRequire.config(requireConfig)
+
           usedRequire([`vs/editor/editor.main`], () => {
             if (typeof this.config.onMonacoLoad === "function") {
               this.config.onMonacoLoad()
             }
+
             this.initMonaco(this._options, this.insideNg)
+
             resolve()
           })
         }
@@ -79,17 +87,19 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
           // Load AMD loader if necessary
         } else if (!(<any>window).require) {
           const loaderScript: HTMLScriptElement = document.createElement("script")
+
           loaderScript.type = "text/javascript"
-          loaderScript.src = `${baseUrl}/monaco/min/vs/loader.js`
+          loaderScript.src = `${baseUrl}/monaco-editor/min/vs/loader.js`
           loaderScript.addEventListener("load", () => {
             onGotAmdLoader()
           })
+
           document.body.appendChild(loaderScript)
           // Load AMD loader without over-riding node's require
         } else if (!(<any>window).require.config) {
-          var src = `${baseUrl}/monaco/min/vs/loader.js`
-
+          var src = `${baseUrl}/monaco-editor/min/vs/loader.js`
           var loaderRequest = new XMLHttpRequest()
+
           loaderRequest.addEventListener("load", () => {
             let scriptElem = document.createElement("script")
             scriptElem.type = "text/javascript"
@@ -103,9 +113,12 @@ export abstract class BaseEditor implements AfterViewInit, OnDestroy {
               "require = nodeRequire;",
               "require.nodeRequire = require;"
             ].join("\n")
+
             document.body.appendChild(scriptElem)
+
             onGotAmdLoader((<any>window).monacoAmdRequire)
           })
+
           loaderRequest.open("GET", src)
           loaderRequest.send()
         } else {
