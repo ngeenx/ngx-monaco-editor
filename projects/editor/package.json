@@ -1,8 +1,8 @@
 {
   "name": "@ngeenx/ngx-monaco-editor",
-  "version": "17.0.0",
+  "version": "17.0.1",
   "private": false,
-  "description": "Monaco Code Editor for Angular",
+  "description": "Angular implementation of Monaco Editor",
   "keywords": [
     "angular",
     "monaco",
@@ -11,10 +11,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/miki995/ngx-monaco-editor-v2.git"
+    "url": "https://github.com/ngeenx/ngx-monaco-editor.git"
   },
   "bugs": {
-    "url": "https://github.com/miki995/ngx-monaco-editor-v2/issues"
+    "url": "https://github.com/ngeenx/ngx-monaco-editor/issues"
   },
   "license": "MIT",
   "author": "Eyüp Erdoğan",
