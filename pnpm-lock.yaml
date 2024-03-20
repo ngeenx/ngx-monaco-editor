@@ -4,117 +4,125 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@angular/animations':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/core@17.3.0)
-  '@angular/common':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/core@17.3.0)(rxjs@7.8.1)
-  '@angular/compiler':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/core@17.3.0)
-  '@angular/core':
-    specifier: ^17.3.0
-    version: 17.3.0(rxjs@7.8.1)(zone.js@0.14.4)
-  '@angular/forms':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/common@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)(rxjs@7.8.1)
-  '@angular/platform-browser':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/animations@17.3.0)(@angular/common@17.3.0)(@angular/core@17.3.0)
-  '@angular/platform-browser-dynamic':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/common@17.3.0)(@angular/compiler@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)
-  '@angular/router':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/common@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)(rxjs@7.8.1)
-  monaco-editor:
-    specifier: ^0.47.0
-    version: 0.47.0
-  rxjs:
-    specifier: ~7.8.1
-    version: 7.8.1
-  tslib:
-    specifier: ^2.6.2
-    version: 2.6.2
-  zone.js:
-    specifier: ^0.14.4
-    version: 0.14.4
+importers:
 
-devDependencies:
-  '@angular-devkit/build-angular':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/compiler-cli@17.3.0)(@types/node@20.11.28)(karma@6.4.3)(ng-packagr@17.3.0)(typescript@5.4.2)
-  '@angular/cli':
-    specifier: ^17.3.0
-    version: 17.3.0
-  '@angular/compiler-cli':
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/compiler@17.3.0)(typescript@5.4.2)
-  '@angular/language-service':
-    specifier: ^17.3.0
-    version: 17.3.0
-  '@types/jasmine':
-    specifier: ~5.1.4
-    version: 5.1.4
-  '@types/node':
-    specifier: ^20.11.28
-    version: 20.11.28
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^7.2.0
-    version: 7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2)
-  '@typescript-eslint/parser':
-    specifier: ^7.2.0
-    version: 7.2.0(eslint@8.57.0)(typescript@5.4.2)
-  eslint:
-    specifier: ^8.57.0
-    version: 8.57.0
-  eslint-plugin-angular:
-    specifier: ^4.1.0
-    version: 4.1.0
-  eslint-plugin-import:
-    specifier: ^2.29.1
-    version: 2.29.1(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)
-  eslint-plugin-jsdoc:
-    specifier: ^48.2.1
-    version: 48.2.1(eslint@8.57.0)
-  eslint-plugin-prefer-arrow:
-    specifier: ^1.2.3
-    version: 1.2.3(eslint@8.57.0)
-  eslint-plugin-promise:
-    specifier: ^6.1.1
-    version: 6.1.1(eslint@8.57.0)
-  jasmine-core:
-    specifier: ^5.1.2
-    version: 5.1.2
-  karma:
-    specifier: ~6.4.3
-    version: 6.4.3
-  karma-chrome-launcher:
-    specifier: ^3.2.0
-    version: 3.2.0
-  karma-coverage:
-    specifier: ^2.2.1
-    version: 2.2.1
-  karma-jasmine:
-    specifier: ~5.1.0
-    version: 5.1.0(karma@6.4.3)
-  karma-jasmine-html-reporter:
-    specifier: ~2.1.0
-    version: 2.1.0(jasmine-core@5.1.2)(karma-jasmine@5.1.0)(karma@6.4.3)
-  ng-packagr:
-    specifier: ^17.3.0
-    version: 17.3.0(@angular/compiler-cli@17.3.0)(tslib@2.6.2)(typescript@5.4.2)
-  npm-run-all:
-    specifier: ^4.1.5
-    version: 4.1.5
-  prettier:
-    specifier: ^3.2.5
-    version: 3.2.5
-  typescript:
-    specifier: 5.4.2
-    version: 5.4.2
+  .:
+    dependencies:
+      '@angular/animations':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/core@17.3.0)
+      '@angular/common':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/core@17.3.0)(rxjs@7.8.1)
+      '@angular/compiler':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/core@17.3.0)
+      '@angular/core':
+        specifier: ^17.3.0
+        version: 17.3.0(rxjs@7.8.1)(zone.js@0.14.4)
+      '@angular/forms':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/common@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)(rxjs@7.8.1)
+      '@angular/platform-browser':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/animations@17.3.0)(@angular/common@17.3.0)(@angular/core@17.3.0)
+      '@angular/platform-browser-dynamic':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/common@17.3.0)(@angular/compiler@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)
+      '@angular/router':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/common@17.3.0)(@angular/core@17.3.0)(@angular/platform-browser@17.3.0)(rxjs@7.8.1)
+      '@ngeenx/monaco-textmate-loader':
+        specifier: ^1.0.12
+        version: 1.0.12
+      monaco-editor:
+        specifier: ^0.47.0
+        version: 0.47.0
+      rxjs:
+        specifier: ~7.8.1
+        version: 7.8.1
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
+      vscode-oniguruma:
+        specifier: ^2.0.1
+        version: 2.0.1
+      zone.js:
+        specifier: ^0.14.4
+        version: 0.14.4
+    devDependencies:
+      '@angular-devkit/build-angular':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/compiler-cli@17.3.0)(@types/node@20.11.28)(karma@6.4.3)(ng-packagr@17.3.0)(typescript@5.4.2)
+      '@angular/cli':
+        specifier: ^17.3.0
+        version: 17.3.0
+      '@angular/compiler-cli':
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/compiler@17.3.0)(typescript@5.4.2)
+      '@angular/language-service':
+        specifier: ^17.3.0
+        version: 17.3.0
+      '@types/jasmine':
+        specifier: ~5.1.4
+        version: 5.1.4
+      '@types/node':
+        specifier: ^20.11.28
+        version: 20.11.28
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^7.2.0
+        version: 7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2)
+      '@typescript-eslint/parser':
+        specifier: ^7.2.0
+        version: 7.2.0(eslint@8.57.0)(typescript@5.4.2)
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.0
+      eslint-plugin-angular:
+        specifier: ^4.1.0
+        version: 4.1.0
+      eslint-plugin-import:
+        specifier: ^2.29.1
+        version: 2.29.1(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)
+      eslint-plugin-jsdoc:
+        specifier: ^48.2.1
+        version: 48.2.1(eslint@8.57.0)
+      eslint-plugin-prefer-arrow:
+        specifier: ^1.2.3
+        version: 1.2.3(eslint@8.57.0)
+      eslint-plugin-promise:
+        specifier: ^6.1.1
+        version: 6.1.1(eslint@8.57.0)
+      jasmine-core:
+        specifier: ^5.1.2
+        version: 5.1.2
+      karma:
+        specifier: ~6.4.3
+        version: 6.4.3
+      karma-chrome-launcher:
+        specifier: ^3.2.0
+        version: 3.2.0
+      karma-coverage:
+        specifier: ^2.2.1
+        version: 2.2.1
+      karma-jasmine:
+        specifier: ~5.1.0
+        version: 5.1.0(karma@6.4.3)
+      karma-jasmine-html-reporter:
+        specifier: ~2.1.0
+        version: 2.1.0(jasmine-core@5.1.2)(karma-jasmine@5.1.0)(karma@6.4.3)
+      ng-packagr:
+        specifier: ^17.3.0
+        version: 17.3.0(@angular/compiler-cli@17.3.0)(tslib@2.6.2)(typescript@5.4.2)
+      npm-run-all:
+        specifier: ^4.1.5
+        version: 4.1.5
+      prettier:
+        specifier: ^3.2.5
+        version: 3.2.5
+      typescript:
+        specifier: 5.4.2
+        version: 5.4.2
 
 packages:
 
@@ -2479,6 +2487,14 @@ packages:
     dependencies:
       call-bind: 1.0.7
     dev: true
+
+  /@ngeenx/monaco-textmate-loader@1.0.12:
+    resolution: {integrity: sha512-oF9HuvPkiMtFEmShQgIJ7lxAw1ak/qBkCufeJ+zmYQVoXqj2F6NLWjVFSNbJ9C+oEmtvPywGyJjDletSuPeOUw==}
+    dependencies:
+      monaco-editor: 0.47.0
+      vscode-oniguruma: 2.0.1
+      vscode-textmate: 9.0.0
+    dev: false
 
   /@ngtools/webpack@17.3.0(@angular/compiler-cli@17.3.0)(typescript@5.4.2)(webpack@5.90.3):
     resolution: {integrity: sha512-wNTCDPPEtjP4mxYerLVLCMwOCTEOD2HqZMVXD8pJbarrGPMuoyglUZuqNSIS5KVqR+fFez6JEUnMvC3QSqf58w==}
@@ -8635,6 +8651,14 @@ packages:
     resolution: {integrity: sha512-qZKX4RnBzH2ugr8Lxa7x+0V6XD9Sb/ouARtiasEQCHB1EVU4NXtmHsDDrx1dO4ne5fc3J6EW05BP1Dl0z0iung==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /vscode-oniguruma@2.0.1:
+    resolution: {integrity: sha512-poJU8iHIWnC3vgphJnrLZyI3YdqRlR27xzqDmpPXYzA93R4Gk8z7T6oqDzDoHjoikA2aS82crdXFkjELCdJsjQ==}
+    dev: false
+
+  /vscode-textmate@9.0.0:
+    resolution: {integrity: sha512-Cl65diFGxz7gpwbav10HqiY/eVYTO1sjQpmRmV991Bj7wAoOAjGQ97PpQcXorDE2Uc4hnGWLY17xme+5t6MlSg==}
+    dev: false
 
   /watchpack@2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}

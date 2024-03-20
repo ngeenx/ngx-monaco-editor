@@ -8,10 +8,17 @@ Angular implementation of [Monaco Editor](https://microsoft.github.io/monaco-edi
 
 ### Installation
 
-Install from npm repository:
+#### Peer Dependencies
+
+PNPM
 ```
-npm install monaco-editor ngx-monaco-editor-v2 --save
- ```
+pnpm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
+```
+
+NPM
+```
+npm i monaco-editor vscode-oniguruma @ngeenx/monaco-textmate-loader
+```
 
 Breaking change from v10, is to use monaco-editor next to ngx-monaco-editor-v2 in your package.json file.
  

@@ -1,0 +1,4 @@
+packages:
+  - "vscode-oniguruma/*"
+  - "@ngeenx/monaco-textmate-loader/*"
+
