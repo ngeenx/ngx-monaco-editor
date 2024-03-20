@@ -10,7 +10,10 @@ declare var monaco: any
 export class SwitchLanguageComponent implements OnInit {
   public options: any = {
     theme: "vs-dark",
-    language: "javascript"
+    language: "javascript",
+    minimap: {
+      enabled: true
+    }
   }
   public code: string | null = null
 
