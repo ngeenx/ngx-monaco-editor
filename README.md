@@ -380,6 +380,10 @@ export class AppModule {
 }
 ```
 
-## Links
+## 📚 Additional Resources
+
 [Monaco Editor](https://github.com/Microsoft/monaco-editor/)<br/>
 [Monaco Editor Options](https://microsoft.github.io/monaco-editor/docs.html)
+[monaco-textmate-loader](https://github.com/ngeenx/monaco-textmate-loader)
+[vscode-oniguruma](https://github.com/microsoft/vscode-oniguruma)
+[WASM](https://webassembly.org/)
