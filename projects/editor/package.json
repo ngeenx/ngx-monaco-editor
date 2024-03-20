@@ -1,6 +1,6 @@
 {
   "name": "@ngeenx/ngx-monaco-editor",
-  "version": "17.0.2",
+  "version": "17.0.3",
   "private": false,
   "description": "Angular implementation of Monaco Editor",
   "keywords": [
