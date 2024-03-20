@@ -5,56 +5,19 @@ import { BrowserModule } from "@angular/platform-browser"
 import { AppComponent } from "./app.component"
 import { NgxMonacoEditorConfig } from "../../../editor/src/lib/common/config"
 import { NgxMonacoEditorModule } from "../../../editor/src/lib/editor.module"
-
-declare var monaco: any
-
-export function onMonacoLoad() {
-  console.log((window as any).monaco)
-
-  const uri = monaco.Uri.parse("a://b/foo.json")
-
-  monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
-    validate: true,
-    schemas: [
-      {
-        uri: "http://myserver/foo-schema.json",
-        fileMatch: [uri.toString()],
-        schema: {
-          type: "object",
-          properties: {
-            p1: {
-              enum: ["v1", "v2"]
-            },
-            p2: {
-              $ref: "http://myserver/bar-schema.json"
-            }
-          }
-        }
-      },
-      {
-        uri: "http://myserver/bar-schema.json",
-        fileMatch: [uri.toString()],
-        schema: {
-          type: "object",
-          properties: {
-            q1: {
-              enum: ["x1", "x2"]
-            }
-          }
-        }
-      }
-    ]
-  })
-}
+import { SwitchLanguageComponent } from "./examples/switch-language/switch-language.component"
+import { DiffEditorComponent } from "./examples/diff-editor/diff-editor.component"
 
 const monacoConfig: NgxMonacoEditorConfig = {
-  baseUrl: "assets",
-  defaultOptions: { scrollBeyondLastLine: false },
-  onMonacoLoad
+  baseUrl: "/assets",
+  defaultOptions: {
+    scrollBeyondLastLine: false,
+    baseUrl: "/assets"
+  }
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SwitchLanguageComponent, DiffEditorComponent],
   imports: [BrowserModule, FormsModule, NgxMonacoEditorModule.forRoot(monacoConfig)],
   providers: [],
   bootstrap: [AppComponent]
