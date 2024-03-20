@@ -37,11 +37,6 @@
               },
               {
                 "glob": "**/*",
-                "input": "node_modules/vscode-oniguruma/release",
-                "output": "./assets/vscode-oniguruma"
-              },
-              {
-                "glob": "**/*",
                 "input": "node_modules/@ngeenx/monaco-textmate-loader/dist/grammars",
                 "output": "./assets/monaco-textmate-loader/grammars"
               },
