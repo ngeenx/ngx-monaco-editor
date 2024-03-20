@@ -7,6 +7,7 @@ import { NgxMonacoEditorConfig } from "../../../editor/src/lib/common/config"
 import { NgxMonacoEditorModule } from "../../../editor/src/lib/editor.module"
 import { SwitchLanguageComponent } from "./examples/switch-language/switch-language.component"
 import { DiffEditorComponent } from "./examples/diff-editor/diff-editor.component"
+import { JsonEditorComponent } from "./examples/json-editor/json-editor.component"
 
 const monacoConfig: NgxMonacoEditorConfig = {
   baseUrl: "/assets",
@@ -17,7 +18,7 @@ const monacoConfig: NgxMonacoEditorConfig = {
 }
 
 @NgModule({
-  declarations: [AppComponent, SwitchLanguageComponent, DiffEditorComponent],
+  declarations: [AppComponent, SwitchLanguageComponent, DiffEditorComponent, JsonEditorComponent],
   imports: [BrowserModule, FormsModule, NgxMonacoEditorModule.forRoot(monacoConfig)],
   providers: [],
   bootstrap: [AppComponent]

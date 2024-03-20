@@ -1,0 +1,9 @@
+<section>
+  <h3>JSON Editor Exmaple</h3>
+
+  <ngx-monaco-editor
+    [options]="options"
+    [(ngModel)]="code"
+    (onInit)="onEditorInit($event)"
+  ></ngx-monaco-editor>
+</section>
