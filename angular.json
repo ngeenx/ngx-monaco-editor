@@ -28,12 +28,32 @@
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor/min",
-                "output": "./assets/monaco/min"
+                "output": "./assets/monaco-editor/min"
               },
               {
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor/min-maps",
-                "output": "./assets/monaco/min-maps"
+                "output": "./assets/monaco-editor/min-maps"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/vscode-oniguruma/release",
+                "output": "./assets/vscode-oniguruma"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ngeenx/monaco-textmate-loader/dist/grammars",
+                "output": "./assets/monaco-textmate-loader/grammars"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ngeenx/monaco-textmate-loader/dist/configurations",
+                "output": "./assets/monaco-textmate-loader/configurations"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/vscode-oniguruma/release",
+                "output": "./assets/vscode-oniguruma/release"
               }
             ],
             "styles": ["projects/editor-tester/src/styles.scss"],
