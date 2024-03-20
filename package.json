@@ -13,6 +13,7 @@
   "scripts": {
     "ng": "ng",
     "e2e": "ng e2e",
+    "serve": "ng serve",
     "build": "node tools/cleanup.js && ng build editor && node tools/copyAssets",
     "package": "npm run build && npm pack ./dist/editor && npm publish ./dist/editor --access public",
     "prettier": "prettier --write \"./projects/**/*.{js,ts}\""
