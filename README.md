@@ -2,7 +2,12 @@
 
 Angular implementation of [Monaco Editor](https://microsoft.github.io/monaco-editor/). Only supports Angular 17 and above versions.
 
+> [!WARNING]
+> This repository maintains a fork of the original [miki995/ngx-monaco-editor-v2](https://github.com/miki995/ngx-monaco-editor-v2) and [atularen/ngx-monaco-editor](https://github.com/atularen/ngx-monaco-editor) repos. This package has been modified to work in custom Angular projects. Also, this package is using directly [ngeenx/monaco-textmate-loader](https://github.com/ngeenx/monaco-textmate-loader) package instead [monaco-editor](https://github.com/microsoft/monaco-editor).
+
+
 ## [Edit on StackBlitz ⚡️](https://stackblitz.com/~/github.com/ngeenx/ngx-monaco-editor)
+
 
 ## 📦 Installation
 
