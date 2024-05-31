@@ -104,8 +104,6 @@ export class EditorComponent extends BaseEditor implements ControlValueAccessor 
       })
     }
 
-    console.log("editor", this._editor)
-
     if (!hasModel) {
       this._editor.setValue(this._value)
     }
