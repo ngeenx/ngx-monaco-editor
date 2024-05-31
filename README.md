@@ -6,6 +6,7 @@ Angular implementation of [Monaco Editor](https://microsoft.github.io/monaco-edi
   - [⚡️ Play on StackBlitz](#️-play-on-stackblitz)
   - [📦 Installation](#-installation)
       - [Peer Dependencies](#peer-dependencies)
+      - [Compatible Versions](#compatible-versions)
       - [Install Package](#install-package)
       - [Asessts](#asessts)
       - [Import Module](#import-module)
@@ -29,6 +30,13 @@ Angular implementation of [Monaco Editor](https://microsoft.github.io/monaco-edi
 #### Peer Dependencies
 
 All of the following peer dependencies must be installed in your project. If you are using PNPM to install the package, you need to add `pnpm-workspace.yaml` file to the root of your project and add the following lines to it (*see [example file](./pnpm-workspace.yaml)*). Because these packages coming with custom assets, you need to add them to the assets in `angular.json` file.
+
+#### Compatible Versions
+
+| Package Version | Angular Version |
+|---------|---------|
+| 17.x.x | 17.x.x |
+| 18.x.x | 18.x.x |
 
 PNPM
 ```
