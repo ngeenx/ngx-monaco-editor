@@ -55,6 +55,8 @@ ngx-monaco-editor,
 ngx-monaco-diff-editor {
   height: 100% !important;
   width: 100% !important;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 .html-preview {

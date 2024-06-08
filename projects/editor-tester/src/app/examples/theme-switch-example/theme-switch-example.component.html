@@ -1,0 +1,35 @@
+<section>
+  <h3>Editor Theme Switch Exmaple</h3>
+
+  <div>
+    <button (click)="onThemeChange(theme === 'vs' ? 'vs-dark' : 'vs')">
+      {{ theme === "vs" ? "Switch to Dark" : "Switch to Light" }}
+    </button>
+
+    <p>
+      Warning #1: Monaco editor supports only one global theme. When you change any instance's
+      theme, all monaco instances will be destroyed and recreated with the new theme. This is a
+      limitation of monaco editor (<a href="https://github.com/Microsoft/monaco-editor/issues/338">
+        See issue #338 </a
+      >).
+    </p>
+
+    <p>
+      Warning #2: Yes, there are some hacks but monaco editor still getting updates and you should
+      be carteful while using these short term fixes.
+    </p>
+
+    <p>
+      Warning #3: Some textmate grammars and syntax themes may not properly work with dark or light
+      editor themes. You should adjust them accordingly.
+    </p>
+  </div>
+
+  <div class="ngx-monaco-editor-container">
+    <ngx-monaco-editor
+      [options]="options"
+      [(ngModel)]="code"
+      (onInit)="onEditorInit($event)"
+    ></ngx-monaco-editor>
+  </div>
+</section>

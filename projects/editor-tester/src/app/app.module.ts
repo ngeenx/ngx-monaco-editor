@@ -13,6 +13,7 @@ import { SwitchLanguageComponent } from "./examples/switch-language/switch-langu
 import { DiffEditorComponent } from "./examples/diff-editor/diff-editor.component"
 import { JsonEditorComponent } from "./examples/json-editor/json-editor.component"
 import { SplitterExampleComponent } from "./examples/splitter-example/splitter-example.component"
+import { ThemeSwitchExampleComponent } from "./examples/theme-switch-example/theme-switch-example.component"
 
 const monacoConfig: NgxMonacoEditorConfig = {
   baseUrl: "/assets",
@@ -28,7 +29,8 @@ const monacoConfig: NgxMonacoEditorConfig = {
     SwitchLanguageComponent,
     DiffEditorComponent,
     JsonEditorComponent,
-    SplitterExampleComponent
+    SplitterExampleComponent,
+    ThemeSwitchExampleComponent
   ],
   imports: [
     BrowserModule,
