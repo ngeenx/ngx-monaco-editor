@@ -1,6 +1,14 @@
 <section>
   <h3>Switch Language Exmaple</h3>
 
+  <p>
+    <b>Warning #1:</b> Syntax highlighting is dependent on the loaded textmate grammars. If you want
+    to display specific language syntax highlighting, you should load the related textmate grammar.
+    Check the
+    <a href="https://github.com/ngeenx/monaco-textmate-loader"> monaco-textmate-loader </a> repo for
+    more details.
+  </p>
+
   <div>
     <button (click)="changeLanguage()">
       {{ options.language === "php" ? "Switch to JS Example" : "Switch to PHP Example" }}
