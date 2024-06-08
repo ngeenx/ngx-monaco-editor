@@ -1,30 +1,38 @@
 <section>
   <h3>Editor Theme Switch Exmaple</h3>
 
+  <ul>
+    <li>
+      <mark>
+        <b>Warning #1:</b> Monaco editor supports only one global theme. When you change any
+        instance's theme, all monaco instances will be destroyed and recreated with the new theme.
+        This is a limitation of monaco editor (<a
+          href="https://github.com/Microsoft/monaco-editor/issues/338"
+        >
+          See issue #338 </a
+        >).
+      </mark>
+    </li>
+
+    <li>
+      <mark>
+        <b>Warning #2:</b> Yes, there are some hacks but monaco editor still getting updates and you
+        should be carteful while using these short term fixes.
+      </mark>
+    </li>
+
+    <li>
+      <mark>
+        <b>Warning #3:</b> Some textmate grammars and syntax themes may not properly work with dark
+        or light editor themes. You should adjust them accordingly.
+      </mark>
+    </li>
+  </ul>
+
   <div>
     <button (click)="onThemeChange(theme === 'vs' ? 'vs-dark' : 'vs')">
       {{ theme === "vs" ? "Switch to Dark" : "Switch to Light" }}
     </button>
-
-    <p>
-      <b>Warning #1:</b> Monaco editor supports only one global theme. When you change any
-      instance's theme, all monaco instances will be destroyed and recreated with the new theme.
-      This is a limitation of monaco editor (<a
-        href="https://github.com/Microsoft/monaco-editor/issues/338"
-      >
-        See issue #338 </a
-      >).
-    </p>
-
-    <p>
-      <b>Warning #2:</b> Yes, there are some hacks but monaco editor still getting updates and you
-      should be carteful while using these short term fixes.
-    </p>
-
-    <p>
-      <b>Warning #3:</b> Some textmate grammars and syntax themes may not properly work with dark or
-      light editor themes. You should adjust them accordingly.
-    </p>
   </div>
 
   <div class="ngx-monaco-editor-container">

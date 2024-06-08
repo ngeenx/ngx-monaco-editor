@@ -47,6 +47,22 @@ button {
   }
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 40px 0px;
+  padding: 0px 20px;
+
+  li {
+    mark {
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #ded523;
+    }
+  }
+}
+
 .ngx-monaco-editor-container {
   height: 300px;
 }
