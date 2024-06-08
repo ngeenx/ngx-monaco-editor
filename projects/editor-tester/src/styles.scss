@@ -39,6 +39,8 @@ button {
   color: white;
   padding: 10px 15px;
   transition: all 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
 
   &:hover {
     background-color: #2a5ea5;
@@ -53,4 +55,8 @@ ngx-monaco-editor,
 ngx-monaco-diff-editor {
   height: 100% !important;
   width: 100% !important;
+}
+
+.html-preview {
+  border: 1px solid gray;
 }
